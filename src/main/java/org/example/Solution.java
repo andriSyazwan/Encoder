@@ -29,6 +29,10 @@ public class Solution implements Encoder {
     @Override
     public String decode(String encodedText) {
         String upperCased = encodedText.toUpperCase();
+        if(charReference.indexOf(upperCased.charAt(0)) == -1) {
+            throw new InvalidFirstCharFound("The char " + encodedText.charAt(0) + " is not part of the table");
+        }
+
         char[] charArrConverted = upperCased.toCharArray();
         int[] numArrConverted = this.convertToNumArray(charArrConverted);
         int[] decodedNumArr = this.decodeNumArray(numArrConverted);

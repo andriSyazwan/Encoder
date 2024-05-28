@@ -15,12 +15,26 @@ public class Solution implements Encoder {
 
     @Override
     public String encode(String plainText) {
-        return "";
+        int shift = this.randomNumGen();
+        String upperCased = plainText.toUpperCase();
+        char[] charArrConverted = upperCased.toCharArray();
+        int[] numArrConverted = this.convertToNumArray(charArrConverted);
+        int[] encodedNumArr = this.encodeNumArray(numArrConverted, shift);
+        char[] encodedCharArr = this.convertNumToCharArray(encodedNumArr);
+
+        return new String(encodedCharArr);
+
     }
 
     @Override
     public String decode(String encodedText) {
-        return "";
+        String upperCased = encodedText.toUpperCase();
+        char[] charArrConverted = upperCased.toCharArray();
+        int[] numArrConverted = this.convertToNumArray(charArrConverted);
+        int[] decodedNumArr = this.decodeNumArray(numArrConverted);
+        char[] decodedCharArr = this.convertNumToCharArray(decodedNumArr);
+
+        return new String(decodedCharArr);
     }
 
     private int[] convertToNumArray(char[] charArray) {

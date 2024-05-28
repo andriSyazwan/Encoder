@@ -44,7 +44,7 @@ public class Solution implements Encoder {
     private int randomNumGen() {
         Random numGen = new Random();
 
-        return numGen.nextInt(44) + 1;
+        return numGen.nextInt(43) + 1;
     }
 
 }

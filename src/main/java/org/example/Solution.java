@@ -28,8 +28,13 @@ public class Solution implements Encoder {
         return "";
     }
 
-    private int[] ConvertToNumArray(char[] charArray) {
+    private int[] convertToNumArray(char[] charArray) {
         int[] result = new int[charArray.length];
+        return result;
+    }
+
+    private char[] convertNumToCharArray(int[] numArr) {
+        char[] result = new char[numArr.length];
         return result;
     }
 
@@ -37,7 +42,7 @@ public class Solution implements Encoder {
         return numArray;
     }
 
-    private int[] decodeNumArray(int[] numArray, int shift) {
+    private int[] decodeNumArray(int[] numArray) {
         return numArray;
     }
 
@@ -45,6 +50,14 @@ public class Solution implements Encoder {
         Random numGen = new Random();
 
         return numGen.nextInt(43) + 1;
+    }
+
+    private int toUnicodeVal(char c) {
+        return - (int) c;
+    }
+
+    private char toUnicodeChar(int n) {
+        return (char) -n;
     }
 
 }

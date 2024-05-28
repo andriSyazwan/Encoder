@@ -22,6 +22,17 @@ public class SolutionTest {
     String testRefer = testSolution.getCharReference("ForTestOnly");
 
     @Test
+    public void testDecodeThrowsInvalidFirstCharFound() {
+        String invalidEncodedText = "@example"; // Assuming '@' is not in charReference
+
+        InvalidFirstCharFound exception = assertThrows(InvalidFirstCharFound.class, () -> {
+            testSolution.decode(invalidEncodedText);
+        });
+
+        assertEquals("The char @ is not part of the table", exception.getMessage());
+    }
+
+    @Test
     public void TestDecoder() {
         // Test for appropriate return values
         String toDecode = "fc/GGj RJmG.";

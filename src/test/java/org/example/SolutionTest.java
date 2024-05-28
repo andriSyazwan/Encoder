@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Random;
 
@@ -33,24 +34,25 @@ public class SolutionTest {
     }
 
     @Test
-    public void TestRandomizer() throws NoSuchMethodException {
-        // Use the mock object
-        when(mockRandom.nextInt()).thenReturn(0); // Optional: Define behavior for nextInt()
+    public void TestRandomizer() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
-        // Call the private methpd
-        Method privateRandomNumGen = Solution.class.getDeclaredMethod("randomNumGen", void.class);
+        // Call the private method
+        Method privateRandomNumGen = Solution.class.getDeclaredMethod("randomNumGen");
         privateRandomNumGen.setAccessible(true);
+        privateRandomNumGen.invoke(testSolution);
 
         // Verify that nextInt was called once
         verify(mockRandom, times(1)).nextInt();
     }
 
     @Test
-    public void TestRandomizerRange() {
-        Random random = new Random();
+    public void TestRandomizerRange() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Method privateRandomNumGen = Solution.class.getDeclaredMethod("randomNumGen");
+        privateRandomNumGen.setAccessible(true);
+        privateRandomNumGen.invoke(testSolution);
 
         for (int i = 0; i < 50; i++) {
-            int value = random.nextInt(43) + 1;
+            int value = (int) privateRandomNumGen.invoke(testSolution);
             assertTrue(value >= 1 && value < 44, "Value is out of range: " + value);
         }
     }

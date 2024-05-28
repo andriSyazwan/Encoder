@@ -3,14 +3,9 @@ package org.example;
 import java.util.Random;
 
 public class Solution implements Encoder {
-    private char[] charReference = {
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '(', ')', '*',
-            '+', ',', '-', '.', '/'
-    };
+    private String charReference = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789()*+,-./";
 
-    public char[] getCharReference(String pass) {
+    public String getCharReference(String pass) {
         if(pass.equals("ForTestOnly")) {
             return this.charReference;
         }
@@ -30,11 +25,21 @@ public class Solution implements Encoder {
 
     private int[] convertToNumArray(char[] charArray) {
         int[] result = new int[charArray.length];
+
+        for(int i = 0; i < charArray.length; i++) {
+            int currInt = charReference.indexOf(charArray[i]);
+            result[i] = currInt == -1 ?  toUnicodeVal(charArray[i]) : currInt;
+        }
+
         return result;
     }
 
     private char[] convertNumToCharArray(int[] numArr) {
         char[] result = new char[numArr.length];
+
+        for(int i = 0; i < numArr.length; i++) {
+            result[i] = numArr[i] < 0 ? toUnicodeChar(numArr[i]) : charReference.charAt(numArr[i]);
+        }
         return result;
     }
 

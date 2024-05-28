@@ -19,7 +19,7 @@ import static org.mockito.Mockito.*;
 public class SolutionTest {
 
     Solution testSolution = new Solution();
-    char[] testRefer = testSolution.getCharReference("ForTestOnly");
+    String testRefer = testSolution.getCharReference("ForTestOnly");
 
     @Test
     public void TestDecoder() {
@@ -64,7 +64,7 @@ public class SolutionTest {
         privateConvertToNumArray.setAccessible(true);
         int[] result = (int[]) privateConvertToNumArray.invoke(testSolution, toConvert);
 
-        assertEquals(answer, result, "The int array does not match");
+        assertArrayEquals(answer, result, "The int array does not match");
     }
 
     @Test
@@ -76,7 +76,7 @@ public class SolutionTest {
         privateConvertNumToCharArray.setAccessible(true);
         char[] result = (char[]) privateConvertNumToCharArray.invoke(testSolution, toConvert);
 
-        assertEquals(answer, result, "The char array does not match");
+        assertArrayEquals(answer, result, "The char array does not match");
     }
 
     @Test
@@ -89,7 +89,7 @@ public class SolutionTest {
         privateEncodeNumArray.setAccessible(true);
         int[] result = (int[]) privateEncodeNumArray.invoke(testSolution, toEncode, 5);
 
-        assertEquals(answer, result, "Encoded int array does not match");
+        assertArrayEquals(answer, result, "Encoded int array does not match");
     }
 
     @Test
@@ -101,7 +101,7 @@ public class SolutionTest {
         privateEncodeNumArray.setAccessible(true);
         int[] result = (int[]) privateEncodeNumArray.invoke(testSolution, toEncode, 4);
 
-        assertEquals(answer, result, "Encoder int fails to appropriately reset");
+        assertArrayEquals(answer, result, "Encoder int fails to appropriately reset");
     }
 
     @Test
@@ -114,7 +114,7 @@ public class SolutionTest {
         privateDecodeNumArray.setAccessible(true);
         int[] result = (int[]) privateDecodeNumArray.invoke(testSolution, toDecode);
 
-        assertEquals(answer, result, "Decoded int array does not match");
+        assertArrayEquals(answer, result, "Decoded int array does not match");
     }
 
     @Test
@@ -126,7 +126,7 @@ public class SolutionTest {
         privateDecodeNumArray.setAccessible(true);
         int[] result = (int[]) privateDecodeNumArray.invoke(testSolution, toDecode);
 
-        assertEquals(answer, result, "Decoder int fails to appropriately reset" );
+        assertArrayEquals(answer, result, "Decoder int fails to appropriately reset" );
     }
 
 

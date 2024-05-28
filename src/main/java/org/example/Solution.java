@@ -44,11 +44,35 @@ public class Solution implements Encoder {
     }
 
     private int[] encodeNumArray(int[] numArray, int shift) {
-        return numArray;
+        int[] result = new int[numArray.length + 1];
+        result[0] = shift;
+
+        for(int i = 1; i < result.length; i++) {
+            if(numArray[i - 1] < 0) {
+                result[i] = numArray[i - 1];
+                continue;
+            }
+
+            int encodedVal = numArray[i - 1] - shift;
+            result[i] = encodedVal < 0 ? encodedVal + 44 : encodedVal;
+        }
+        return result;
     }
 
     private int[] decodeNumArray(int[] numArray) {
-        return numArray;
+        int[] result = new int[numArray.length - 1];
+        int shift = numArray[0];
+
+        for(int i = 1; i < numArray.length; i++) {
+            if(numArray[i] < 0) {
+                result[i - 1] = numArray[i];
+                continue;
+            }
+
+            int decodedVal = numArray[i] + shift;
+            result[i - 1] = decodedVal > 43 ? decodedVal % 44 : decodedVal;
+        }
+        return result;
     }
 
     private int randomNumGen() {

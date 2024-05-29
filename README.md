@@ -45,9 +45,9 @@ This project can be particularly useful for system administrators who need to en
 
 ## Appendix
 ### Notes
-![Problem Brief Notes](Problem Brief Notes.png)
-![Features and Functionality Notes](Features and Functionality notes.png)
-![Test and Development Notes](Test and Development notes.png)
+![Problem Brief Notes](Problem%20Brief%20Notes.png)
+![Features and Functionality Notes](Features%20and%20Functionality%20notes.png)
+![Test and Development Notes](Test%20and%20Development%20notes.png)
 
 ---
 

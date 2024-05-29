@@ -6,7 +6,7 @@ This project can be particularly useful for system administrators who need to en
 ## Quick Start Guide
 1. **Clone the repository**:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/andriSyazwan/Encoder.git
     ```
 2. **Configure JDK**:
     - Ensure that JDK 21 is installed and configured. You might need to set the JAVA_HOME environment variable to point to your JDK 21 installation.
@@ -45,7 +45,9 @@ This project can be particularly useful for system administrators who need to en
 
 ## Appendix
 ### Notes
-![Notes](path-to-notes-image)
+![Problem Brief Notes](Problem Brief Notes.png)
+![Features and Functionality Notes](Features and Functionality notes.png)
+![Test and Development Notes](Test and Development notes.png)
 
 ---
 

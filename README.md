@@ -1,4 +1,5 @@
 # Encoder
+This project is an encoder that transforms plaintext into an obfuscated string using a character-based shift algorithm. The encoder selects an offset character from a reference table to shift all characters by a specified amount, creating a unique encoded message. Any character not in the reference table remains unchanged. The same offset character is used to decode the message back to its original form. This solution showcases OOP principles through the implementation of encoding and decoding methods.
 
 ## Story of Possible Uses
 This project can be particularly useful for system administrators who need to encrypt and decrypt password files for better privacy and security. It showcases a simple yet effective way to encode and decode text, ensuring that sensitive information is protected.
@@ -44,6 +45,17 @@ This project can be particularly useful for system administrators who need to en
     - Extend the scanner to accept files, encode the text within the file, and output a file with the encoded text. This will enhance the usability of the application for batch processing.
 
 ## Appendix
+### For The Developers From DXC Grading Me
+This project was an intriguing puzzle that I thoroughly enjoyed solving. I took the opportunity to merge OOP principles with a Data Structures and Algorithms challenge, turning it into a delightful coding adventure. Here's a quick rundown of the journey:
+
+- **Planning**: 2 hours of strategizing (and a bit of daydreaming)
+- **Developing Test Cases**: 3 hours of rigorous testing (and debugging)
+- **Implementation**: 1 hour of focused coding (with coffee breaks, of course)
+- **Setting Up the Repository**: 2 hours of organizing and beautifying this page (because who doesn't love a well-organized project?)
+
+In total, this project represents about 8-10 hours of dedication, perseverance, and a sprinkle of humor. I hope you appreciate the effort that went into this, and I look forward to the possibility of joining your team. Thank you for considering my application.
+
+P.S. If you need someone who can code with a smile and solve problems with a touch of fun, I'm your person. Let's decode some great solutions together!
 ### Notes
 ![Problem Brief Notes](Problem%20Brief%20Notes.png)
 ![Features and Functionality Notes](Features%20and%20Functionality%20notes.png)

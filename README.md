@@ -29,7 +29,7 @@ This project can be particularly useful for system administrators who need to en
 - **Randomizer for Encoding**: Utilizes a random number generator to encode text.
 - **Case Handling**: Accepts lowercase inputs but always returns uppercase encoded text.
 - **Object-Oriented Programming (OOP)**: The application is built with OOP principles in mind.
-- **Exception Handling**: Contains an class inherited from RunTimeException that detects invalid inputs.
+- **Exception Handling**: Contains a class inherited from RunTimeException that detects invalid inputs.
 
 ## Demonstration of OOP
 - **Encapsulation**: 
